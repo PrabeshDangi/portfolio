@@ -7,8 +7,8 @@ export const pageLinks = [
     name: "Get in Touch",
     path: "/contact",
   },
-  {
-    name: "View Projects    ",
-    path: "/projects",
-  },
+  // {
+  //   name: "View Projects    ",
+  //   path: "/projects",
+  // },
 ];

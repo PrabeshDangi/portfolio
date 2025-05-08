@@ -14,7 +14,7 @@ const Nav = () => {
           />
         </Link>
         <div className="flex items-center gap-6">
-          <div className="relative hidden md:block group cursor-help">
+          {/* <div className="relative hidden md:block group cursor-help">
             <span className="text-text-light dark:text-text-dark hover:opacity-80 transition-colors">
               Hover Me
             </span>
@@ -25,7 +25,7 @@ const Nav = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-          </div>
+          </div> */}
           {/* <button
             onClick={toggle}
             aria-label="Toggle dark mode"

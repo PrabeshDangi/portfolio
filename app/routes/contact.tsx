@@ -11,5 +11,5 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Contact() {
-  return <section>Contact</section>;
+  return <section>Get in touch with me for collaborations, opportunities, or just to say hello. I'm always open to connecting with fellow developers and tech enthusiasts.</section>;
 }

@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Host Grotesk", sans-serif;
+  --container-2xl: 50rem;
+  --color-background: oklch(100% 0 0);
+    --color-foreground: oklch(20% 0.02 240);
+  --color-primary: oklch(60% 0.15 160);
+  --color-primary-foreground: oklch(98% 0.02 240);
+    --color-secondary: oklch(60% 0.15 240);
+    --color-secondary-foreground: oklch(98% 0.02 160);
+  --color-muted: oklch(96% 0.02 240);
+  --color-muted-foreground: oklch(60% 0.1 240);
+    --color-accent: oklch(70% 0.2 160);
+    --color-accent-foreground: oklch(98% 0.02 160);
+  --color-border: oklch(40% 0.02 240);
+    --color-input: oklch(90% 0.02 240);
+    --color-ring: oklch(70% 0.15 240);
+    --color-destructive: oklch(54% 0.2 30);
+    --color-destructive-foreground: oklch(98% 0.01 30);
+}
+@variant dark (&:where([data-theme="dark"], [data-theme="dark"], .dark, *));
+
+@layer base {
+  body {
+    @apply bg-background text-foreground dark:bg-foreground dark:text-background transition-colors duration-200;
+    }
+}

@@ -23,7 +23,7 @@ export const links = [
   {
     platform: "Email",
     icon: <FaEnvelope className="text-2xl md:text-3xl" />,
-    url: "mailto:dangiprabesh@gmail.com",
+    url: "mailto:contact@dangiprabesh.com.np",
     color: "hover:text-red-600",
   },
   {

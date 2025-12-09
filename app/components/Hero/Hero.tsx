@@ -34,9 +34,9 @@ const Hero = ({ randomSusVariable }: { randomSusVariable: string }) => {
                 </div>
               </div>
             </Link>
-            <p className="text-foreground dark:text-background">
+            {/* <p className="text-foreground dark:text-background">
               {randomSusVariable}.
-            </p>
+            </p> */}
           </p>
         </div>
       </div>

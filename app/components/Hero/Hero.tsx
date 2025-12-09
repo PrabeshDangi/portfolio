@@ -1,19 +1,20 @@
 import { Link } from "react-router";
 
-const Hero = () => {
+const Hero = ({ randomSusVariable }: { randomSusVariable: string }) => {
   return (
     <section className="">
       <div className="flex-1 space-y-6 max-w-3xl">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground dark:text-background">
-          Hi, I'm <span className="text-primary">Prabesh Dangi</span> 
+          Hi, I'm <span className="text-primary">Prabesh Dangi</span>
         </h1>
         <h2 className="text-2xl md:text-3xl text-foreground dark:text-background font-medium">
           Backend Developer
         </h2>
         <div className="space-y-4 text-lg text-foreground dark:text-background leading-relaxed">
           <p className="">
-          Architect of logic. Builder of APIs. 
-           I’m a backend developer who crafts the foundations of seamless digital experiences — because what happens behind the curtain matters.
+            Architect of logic. Builder of APIs. I’m a backend developer who
+            crafts the foundations of seamless digital experiences — because
+            what happens behind the curtain matters.
           </p>
           <p>
             I'm currently working as a backend developer at{" "}
@@ -33,6 +34,9 @@ const Hero = () => {
                 </div>
               </div>
             </Link>
+            <p className="text-foreground dark:text-background">
+              {randomSusVariable}.
+            </p>
           </p>
         </div>
       </div>

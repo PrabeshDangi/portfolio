@@ -18,7 +18,7 @@ export default function Blog() {
         {/* Blog post cards will go here */}
         <div className="p-6 border rounded-lg shadow-sm">
           <h2 className="text-xl font-semibold mb-4">Coming Soon</h2>
-          <p className="text-foreground/40">Blog posts coming soon...</p>
+          <p className="">Blog posts coming very very soon...</p>
         </div>
       </div>
     </div>

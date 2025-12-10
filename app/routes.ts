@@ -14,6 +14,9 @@ export default [
   route("blog", "./routes/blog.tsx"),
   route("contact", "./routes/contact.tsx"),
   route("links", "./routes/links.tsx"),
+  route("llm", "./routes/llm.tsx"),
+  route("resume", "./routes/resume.tsx"),
   route("robots.txt", "./routes/[robots.txt].tsx"),
   route("sitemap.xml", "./routes/[sitemap.xml].tsx"),
+  route("*", "./routes/$.tsx"),
 ] satisfies RouteConfig;

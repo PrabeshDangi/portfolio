@@ -1,5 +1,5 @@
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
-import { SiHashnode, SiDevdotto, SiDailydotdev } from "react-icons/si";
+import { FaGithub, FaLinkedin, FaEnvelope, FaFilePdf } from "react-icons/fa";
+import { SiDailydotdev } from "react-icons/si";
 
 export const links = [
   {
@@ -31,6 +31,12 @@ export const links = [
     icon: <SiDailydotdev className="text-2xl md:text-3xl" />,
     url: "https://app.daily.dev/prabeshdangi",
     color: "hover:text-sky-500",
+  },
+  {
+    platform: "Resume",
+    icon: <FaFilePdf className="text-2xl md:text-3xl" />,
+    url: "/resume",
+    color: "hover:text-red-600",
   },
   // {
   //   platform: "Blog",

@@ -2,27 +2,69 @@ import type { Project } from "~/types/project";
 
 export const projects: Project[] = [
   {
-    slug: "portfolio-website",
-    title: "Portfolio Website",
+    slug: "aitc-homes",
+    title: "AITC Homes",
     description:
-      "A modern portfolio website built with React, TypeScript, and Tailwind CSS",
-    content:
-      "This is my personal portfolio website built with modern web technologies. It showcases my projects, skills, and experience in a clean and responsive design.",
-    date: "2024-01-15",
-    tags: ["React", "TypeScript", "Tailwind CSS"],
-    github: "https://github.com/yourusername/portfolio",
-    demo: "https://your-portfolio.com",
+      "Backend system built with NestJS, Redis caching, Docker, BullMQ, AWS, Nginx, and monitoring via Grafana.",
+    details: [
+      "Developed backend modules using NestJS with a layered caching strategy (Redis) to reduce peak-time latency.",
+      "Orchestrated microservices using Docker and deployed with AWS CI/CD pipelines (Jenkins, Azure Pipelines).",
+      "Configured Nginx for SSL termination, routing, and optimized API delivery.",
+      "Integrated BullMQ for background workflows and real-time task processing.",
+      "Implemented Grafana dashboards for system health and performance monitoring."
+    ],
+    tags: ["NestJS", "Prisma", "Postgres", "Redis", "BullMQ", "Nginx", "Docker", "AWS", "Grafana"],
+    date: "2024-06-15",
+    link: "https://dub.sh/aitc-homes"
   },
+
   {
-    slug: "task-manager",
-    title: "Task Manager",
+    slug: "annapurna-galleries",
+    title: "Annapurna Galleries",
     description:
-      "A full-stack task management application with real-time updates",
-    content:
-      "A modern task management application that helps users organize their work with real-time collaboration features.",
-    date: "2024-01-10",
-    tags: ["React", "Node.js", "MongoDB", "WebSocket"],
-    github: "https://github.com/yourusername/task-manager",
-    demo: "https://your-task-manager.com",
+      "Auction platform with real-time bidding using WebSocket and Event-Driven architecture.",
+    details: [
+      "Developed backend features using ExpressJS with structured data access via Prisma.",
+      "Implemented real-time auction bidding using WebSocket channels.",
+      "Built BullMQ-powered pipelines for time-sensitive auction tasks and notifications.",
+      "Integrated payments and optimized Nginx routing for high concurrency.",
+      "Engineered an event-driven architecture ensuring synchronized and responsive bidding."
+    ],
+    tags: ["ExpressJS", "Prisma", "Postgres", "BullMQ", "WebSocket", "Nginx"],
+    date: "2024-04-01",
+    link: "https://dub.sh/annapurna"
   },
+
+  {
+    slug: "jawaaf-education",
+    title: "Jawaaf Education (Freelance)",
+    description:
+      "Full-scale LMS backend built solo using NestJS, Redis, Docker Swarm, and Hetzner deployment.",
+    details: [
+      "Designed and built the entire backend architecture from scratch for a production LMS.",
+      "Created modular NestJS services using Prisma and Redis caching.",
+      "Enabled real-time features tailored for LMS activities.",
+      "Deployed using Docker Swarm on Hetzner with highly available setup.",
+      "Optimized Nginx routing and DB performance for smooth learning experiences."
+    ],
+    tags: ["NestJS", "Prisma", "Redis", "Docker Swarm", "Hetzner", "Nginx"],
+    date: "2024-02-10",
+    link: "https://dub.sh/jawaaf"
+  },
+
+  {
+    slug: "coinflick",
+    title: "Coinflick",
+    description:
+      "Crypto portfolio backend using ExpressJS, TypeORM, PostgreSQL, Docker, and AWS.",
+    details: [
+      "Designed and built backend APIs using Express.js and TypeORM.",
+      "Containerized services with Docker and deployed on AWS.",
+      "Improved reliability through optimized DB indexing and caching patterns.",
+      "Configured Nginx routing and performance tuning for high-speed delivery."
+    ],
+    tags: ["ExpressJS", "TypeORM", "PostgreSQL", "Docker", "AWS", "Nginx"],
+    date: "2023-09-22",
+    link: "https://dub.sh/coinflick"
+  }
 ];

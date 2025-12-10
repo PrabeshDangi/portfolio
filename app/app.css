@@ -25,5 +25,15 @@
 @layer base {
   body {
     @apply bg-background text-foreground dark:bg-foreground dark:text-background transition-colors duration-200;
-    }
+  }
+  
+  /* Prevent layout shifts during route transitions */
+  main {
+    contain: layout style;
+  }
+  
+  /* Optimize route transitions */
+  [data-router-slot] {
+    will-change: contents;
+  }
 }

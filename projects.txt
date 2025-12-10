@@ -1,0 +1,32 @@
+AITC Homes (NestJs, Prisma, Postgres, Redis, Nginx, BullMQ, Docker, Aws, Grafana)
+
+• Built backend modules with NestJS and implemented multi-layer caching using Redis to reduce response latency during peak traffic.
+• Orchestrated services with Docker and deployed on AWS, ensuring reliable CI/CD with Jenkins, Azure Pipelines and ensured scalable infrastructure.
+• Configured Nginx for routing, SSL termination, and optimized delivery across services.
+• Integrated Messaging Queue for background task pipelines and added Grafana dashboards for visibility into API health and system performance.
+
+Link: https://dub.sh/aitc-homes
+
+Annapurna Galleries ( ExpressJs, Prisma,Postgres, BullMQ, Websocket, Nginx)
+
+• Developed backend features using ExpressJS and implemented real-time bidding with WebSocket channels, enabling smooth and synchronized auction events.
+• Designed BullMQ workflows for processing time-sensitive auction jobs and notifications with high throughput.
+• Integrated payment systems and optimized Nginx routing to ensure stable transactions and real-time auction responsiveness, also delivering a smooth bidding experience with proper concurrency handling and event-driven architecture.
+
+Link: https://dub.sh/annapurna
+
+Jawaaf Educations-Freelance Project: ( NestJs, Prisma, Redis, Nginx, Docker swarm, Hetzner)
+
+• Designed and built the entire backend from scratch as a solo engineer for a full-scale Learning Management System.
+• Architected a modular NestJS codebase with Prisma, Redis caching, and real-time features tailored to LMS workflows.
+• Deployed services via Docker Swarm on Hetzner, achieving high availability and simplified rollout processes.
+• Configured Nginx and database optimizations to deliver a stable, production-ready platform with smooth user experience.
+Link: https://dub.sh/jawaaf
+
+Coinflick (ExpressJs, TypeORM, Postgres, Docker, Aws )
+
+• Built the backend from scratch using Express.js, TypeORM, and PostgreSQL, delivering scalable and reliable APIs for a crypto portfolio platform.
+• Containerized services with Docker and deployed the system on AWS with proper networking, security, and performance tuning.
+• Optimized Nginx routing and database performance to ensure a fast, production-ready user experience.
+
+Link: https://dub.sh/coinflick

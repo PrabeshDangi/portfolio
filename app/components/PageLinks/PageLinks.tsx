@@ -6,9 +6,8 @@ const PageLinks = () => {
     <div className="mt-12  ">
       <div className="text-lg ">
         {pageLinks.map((link, index) => (
-          <>
+          <span key={index}>
             <NavLink
-              key={index}
               to={link.path}
               prefetch="viewport"
               className={({ isActive }) =>
@@ -24,7 +23,7 @@ const PageLinks = () => {
                 |
               </span>
             )}
-          </>
+          </span>
         ))}
       </div>
     </div>

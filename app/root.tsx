@@ -12,6 +12,7 @@ import { FaHome, FaRobot } from "react-icons/fa";
 import "./app.css";
 import Nav from "./components/Nav/Nav";
 import PageLinks from "./components/PageLinks/PageLinks";
+import "virtual:mcp";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -93,14 +94,11 @@ export function ErrorBoundary({ error }: Readonly<Route.ErrorBoundaryProps>) {
             <p className="text-xl md:text-2xl text-foreground/80 dark:text-background/80 max-w-2xl">
               Even the LLM couldn't hallucinate this page.
             </p>
-            <Link
-              to="/"
-              className="group relative mt-8 inline-block"
-            >
+            <Link to="/" className="group relative mt-8 inline-block">
               <div className="relative px-8 py-4 overflow-hidden rounded-2xl border-2 border-primary/30 bg-gradient-to-br from-primary/5 via-primary/10 to-primary/5 backdrop-blur-sm transition-all duration-500 hover:border-primary/60 hover:shadow-[0_0_30px_rgba(0,0,0,0.2)] hover:shadow-primary/20 dark:hover:shadow-primary/30">
                 {/* Animated background gradient */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
-                
+
                 {/* Content */}
                 <div className="relative flex items-center gap-4">
                   <div className="relative">
@@ -111,12 +109,21 @@ export function ErrorBoundary({ error }: Readonly<Route.ErrorBoundaryProps>) {
                     Back to the homepage
                   </span>
                   <div className="flex gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" style={{ animationDelay: '0ms' }}></span>
-                    <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" style={{ animationDelay: '150ms' }}></span>
-                    <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" style={{ animationDelay: '300ms' }}></span>
+                    <span
+                      className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"
+                      style={{ animationDelay: "0ms" }}
+                    ></span>
+                    <span
+                      className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"
+                      style={{ animationDelay: "150ms" }}
+                    ></span>
+                    <span
+                      className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"
+                      style={{ animationDelay: "300ms" }}
+                    ></span>
                   </div>
                 </div>
-                
+
                 {/* Animated border glow */}
                 <div className="absolute inset-0 rounded-2xl border-2 border-primary/0 group-hover:border-primary/50 transition-all duration-500"></div>
               </div>

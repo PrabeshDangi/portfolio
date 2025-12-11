@@ -18,12 +18,14 @@ const Hero = ({ randomSusVariable }: { randomSusVariable: string }) => {
           </p>
           <p>
             I'm currently working as a backend developer at{" "}
-            <Link
-              to="https://aitc.ai/"
-              target="_blank"
-              className="text-primary group relative inline-flex items-center"
-            >
-              AITC
+            <span className="text-primary group relative inline-flex items-center">
+              <Link
+                to="https://aitc.ai/"
+                target="_blank"
+                className="text-primary"
+              >
+                AITC
+              </Link>
               <div className="absolute left-full ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                 <div className="w-12 h-12 rounded-full overflow-hidden flex items-center justify-center bg-white">
                   <img
@@ -33,7 +35,7 @@ const Hero = ({ randomSusVariable }: { randomSusVariable: string }) => {
                   />
                 </div>
               </div>
-            </Link>
+            </span>
             {/* <p className="text-foreground dark:text-background">
               {randomSusVariable}.
             </p> */}

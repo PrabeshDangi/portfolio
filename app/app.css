@@ -1,29 +1,66 @@
-@import url("https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap");
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Host Grotesk", sans-serif;
-  --container-2xl: 50rem;
-  --color-background: oklch(100% 0 0);
-    --color-foreground: oklch(20% 0.02 240);
-  --color-primary: oklch(60% 0.15 160);
-  --color-primary-foreground: oklch(98% 0.02 240);
-    --color-secondary: oklch(60% 0.15 240);
-    --color-secondary-foreground: oklch(98% 0.02 160);
-  --color-muted: oklch(96% 0.02 240);
-  --color-muted-foreground: oklch(60% 0.1 240);
-    --color-accent: oklch(70% 0.2 160);
-    --color-accent-foreground: oklch(98% 0.02 160);
-  --color-border: oklch(40% 0.02 240);
-    --color-input: oklch(90% 0.02 240);
-    --color-ring: oklch(70% 0.15 240);
-    --color-destructive: oklch(54% 0.2 30);
-    --color-destructive-foreground: oklch(98% 0.01 30);
+  --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --container-2xl: 42rem;
 }
-@variant dark (&:where([data-theme="dark"], [data-theme="dark"], .dark, *));
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground dark:bg-foreground dark:text-background transition-colors duration-200;
-    }
+    @apply bg-white font-sans text-neutral-800 antialiased;
+    @apply dark:bg-neutral-950 dark:text-neutral-100;
+  }
+
+  ::selection {
+    background-color: rgb(23 23 23 / 0.1);
+  }
+
+  [data-theme="dark"] ::selection {
+    background-color: rgb(245 245 245 / 0.2);
+  }
+
+  /* ponytail: invert removes baked-in black bg on light theme; dark keeps original colors */
+  .logo-theme {
+    filter: invert(1) grayscale(1) contrast(1.2);
+  }
+
+  [data-theme="dark"] .logo-theme {
+    filter: none;
+  }
+}
+
+@layer components {
+  .page-heading {
+    @apply text-3xl font-bold tracking-tight text-neutral-900 md:text-4xl dark:text-neutral-100;
+  }
+
+  .section-label {
+    @apply text-sm font-medium uppercase tracking-widest text-neutral-500 dark:text-neutral-400;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full border border-neutral-300 px-5 py-2.5 text-sm font-medium text-neutral-800 no-underline
+      transition-colors hover:bg-neutral-900 hover:text-white
+      dark:border-neutral-700 dark:text-neutral-100 dark:hover:bg-neutral-100 dark:hover:text-neutral-900;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium text-neutral-500 no-underline
+      transition-colors hover:text-neutral-900 dark:hover:text-neutral-100;
+  }
+
+  .nav-link {
+    @apply text-sm text-neutral-500 transition-colors hover:text-neutral-900 dark:hover:text-neutral-100;
+  }
+
+  .nav-link-active {
+    @apply text-neutral-900 dark:text-neutral-100;
+  }
 }

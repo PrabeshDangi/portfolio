@@ -3,6 +3,14 @@ import { Link } from "react-router";
 import type { Route } from "./+types/singleProject";
 import { projects } from "content/projects";
 
+function formatDate(date: string) {
+  return new Date(date).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+
 export function meta({ params }: Route.MetaArgs) {
   const project = projects.find((p) => p.slug === params.slug);
 
@@ -25,53 +33,67 @@ export default function ProjectPage({ params }: Route.ActionArgs) {
   const project = projects.find((p) => p.slug === params.slug);
 
   if (!project) {
-    return <div>Project not found</div>;
+    return (
+      <section className="space-y-4">
+        <h1 className="page-heading">Project not found</h1>
+        <Link to="/projects" className="btn-secondary inline-flex">
+          ← Back to work
+        </Link>
+      </section>
+    );
   }
 
   return (
-    <article className="max-w-4xl mx-auto px-4 py-8">
-      {project.image && (
-        <img
-          src={project.image}
-          alt={project.title}
-          className="w-full h-64 md:h-96 object-cover rounded-lg mb-8"
-        />
-      )}
-      <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
-      <p className="text-lg leading-relaxed">{project.description}</p>
-      <div className="flex flex-wrap gap-2 mb-6">
+    <article className="space-y-8">
+      <Link to="/projects" className="btn-secondary inline-flex">
+        ← Back to work
+      </Link>
+
+      <div className="space-y-4">
+        <h1 className="page-heading">{project.title}</h1>
+        <p className="text-sm text-neutral-500 dark:text-neutral-400">
+          {formatDate(project.date)}
+        </p>
+        <p className="leading-relaxed text-neutral-600 dark:text-neutral-400">
+          {project.description}
+        </p>
+      </div>
+
+      <section className="rounded-2xl border border-neutral-200 p-6 dark:border-neutral-800">
+        <p className="section-label">What I built</p>
+        <ul className="mt-3 space-y-3 text-sm text-neutral-600 dark:text-neutral-300">
+          {project.details.map((item, idx) => (
+            <li key={idx} className="flex gap-3">
+              <span className="mt-0.5 inline-flex size-5 shrink-0 items-center justify-center rounded-full border border-neutral-200 text-xs font-medium text-neutral-700 dark:border-neutral-800 dark:text-neutral-200">
+                {idx + 1}
+              </span>
+              <span className="leading-relaxed">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <div className="flex flex-wrap gap-2">
         {project.tags.map((tag) => (
           <span
             key={tag}
-            className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
+            className="rounded-full border border-neutral-200 px-3 py-1 text-xs text-neutral-600 dark:border-neutral-800 dark:text-neutral-300"
           >
             {tag}
           </span>
         ))}
       </div>
-      <div className="flex gap-4 mb-8">
-        {project.github && (
-          <Link
-            to={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-primary hover:underline"
-          >
-            View on GitHub
-          </Link>
-        )}
-        {project.demo && (
-          <Link
-            to={project.demo}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-primary hover:underline"
-          >
-            Live Demo
-          </Link>
-        )}
+
+      <div className="flex gap-4">
+        <a
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-primary inline-flex"
+        >
+          Open project →
+        </a>
       </div>
-      <p className="text-lg leading-relaxed">{project.content}</p>
     </article>
   );
 }

@@ -2,10 +2,8 @@ export interface Project {
   slug: string;
   title: string;
   description: string;
-  content: string;
-  date: string;
+  details: string[];
   tags: string[];
-  image?: string;
-  github?: string;
-  demo?: string;
+  date: string;
+  link: string;
 }

@@ -1,16 +1,16 @@
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
-import { SiHashnode, SiDevdotto, SiDailydotdev } from "react-icons/si";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { SiDailydotdev } from "react-icons/si";
 
 export const links = [
   {
     platform: "GitHub",
-    icon: <FaGithub className="text-2xl md:text-3xl" />,
+    icon: <FaGithub className="text-xl" />,
     url: "https://github.com/PrabeshDangi",
     color: "hover:text-gray-800",
   },
   {
     platform: "LinkedIn",
-    icon: <FaLinkedin className="text-2xl md:text-3xl" />,
+    icon: <FaLinkedin className="text-xl" />,
     url: "https://www.linkedin.com/in/prabesh-dangi-912864267/",
     color: "hover:text-blue-600",
   },
@@ -22,13 +22,13 @@ export const links = [
   // },
   {
     platform: "Email",
-    icon: <FaEnvelope className="text-2xl md:text-3xl" />,
+    icon: <FaEnvelope className="text-xl" />,
     url: "mailto:contact@dangiprabesh.com.np",
     color: "hover:text-red-600",
   },
   {
     platform: "Daily dev",
-    icon: <SiDailydotdev className="text-2xl md:text-3xl" />,
+    icon: <SiDailydotdev className="text-xl" />,
     url: "https://app.daily.dev/prabeshdangi",
     color: "hover:text-sky-500",
   },

@@ -12,15 +12,23 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Blog() {
   return (
-    <div className="container mx-auto pt-32 px-4">
-      <h1 className="text-4xl font-bold text-foreground mb-8">Blog Posts</h1>
-      <div className="grid gap-8">
-        {/* Blog post cards will go here */}
-        <div className="p-6 border rounded-lg shadow-sm">
-          <h2 className="text-xl font-semibold mb-4">Coming Soon</h2>
-          <p className="text-foreground/40">Blog posts coming soon...</p>
-        </div>
+    <section className="space-y-10">
+      <div className="space-y-3">
+        <p className="section-label">Writings</p>
+        <h1 className="page-heading">Blog</h1>
+        <p className="max-w-lg text-neutral-600 dark:text-neutral-400">
+          Articles on backend development, system design, and lessons from
+          building software.
+        </p>
       </div>
-    </div>
+
+      <article className="rounded-2xl border border-neutral-200 p-6 dark:border-neutral-800">
+        <p className="text-sm text-neutral-500 dark:text-neutral-400">Coming soon</p>
+        <h2 className="mt-2 text-lg font-medium">Posts are on the way</h2>
+        <p className="mt-2 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+          I&apos;m drafting my first articles. Check back soon.
+        </p>
+      </article>
+    </section>
   );
 }

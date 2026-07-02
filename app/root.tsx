@@ -9,32 +9,34 @@ import {
 import type { Route } from "./+types/root";
 import "./app.css";
 import Nav from "./components/Nav/Nav";
-import PageLinks from "./components/PageLinks/PageLinks";
+import Footer from "./components/Footer/Footer";
+import GridBackground from "./components/GridBackground/GridBackground";
 
 export const links: Route.LinksFunction = () => [
-  { rel: "preconnect", href: "https://fonts.googleapis.com" },
-  {
-    rel: "preconnect",
-    href: "https://fonts.gstatic.com",
-    crossOrigin: "anonymous",
-  },
-  {
-    rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
-  },
   {
     rel: "icon",
     type: "image/png",
-    href: "/logooo.png",
+    href: "/PrabeshLogo.png",
   },
 ];
 
+const themeScript = `
+(function () {
+  var theme = localStorage.getItem("theme");
+  if (!theme) {
+    theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+  document.documentElement.setAttribute("data-theme", theme);
+})();
+`;
+
 export function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <Meta />
         <Links />
       </head>
@@ -49,13 +51,14 @@ export function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
 
 function App() {
   return (
-    <main className="container max-w-4xl mx-auto px-6">
+    <div className="relative flex min-h-screen flex-col">
+      <GridBackground />
       <Nav />
-      <div className="mt-8 md:mt-16">
+      <main className="relative z-10 mx-auto w-full max-w-2xl flex-1 px-6 py-12 md:py-16">
         <Outlet />
-      </div>
-      <PageLinks />
-    </main>
+      </main>
+      <Footer />
+    </div>
   );
 }
 
@@ -78,11 +81,11 @@ export function ErrorBoundary({ error }: Readonly<Route.ErrorBoundaryProps>) {
   }
 
   return (
-    <main className="pt-16 p-4 container mx-auto">
-      <h1>{message}</h1>
-      <p>{details}</p>
+    <main className="mx-auto max-w-2xl px-6 py-16">
+      <h1 className="page-heading">{message}</h1>
+      <p className="mt-4 text-neutral-600 dark:text-neutral-400">{details}</p>
       {stack && (
-        <pre className="w-full p-4 overflow-x-auto">
+        <pre className="mt-6 w-full overflow-x-auto rounded-lg border border-neutral-200 p-4 text-sm dark:border-neutral-800">
           <code>{stack}</code>
         </pre>
       )}

@@ -1,7 +1,7 @@
 import { links } from "content/links";
 import { Link } from "react-router";
 import type { Route } from "./+types/links";
-import { BASE_URL, generateMetadata } from "~/utils/metadata";
+import { generateMetadata } from "~/utils/metadata";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -16,30 +16,30 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Links() {
   return (
-    <section>
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-foreground dark:text-background">
-        Let's Connect
-      </h2>
+    <section className="space-y-10">
+      <div className="space-y-3">
+        <p className="section-label">Connect</p>
+        <h1 className="page-heading">Let&apos;s connect</h1>
+        <p className="max-w-lg text-neutral-600 dark:text-neutral-400">
+          Find me across platforms — always open to conversations about
+          backend engineering and interesting projects.
+        </p>
+      </div>
 
-      <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
+      <div className="grid gap-3 sm:grid-cols-2">
         {links.map((link) => (
           <Link
             key={link.platform}
             to={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className={`group rounded-xl p-6 border  dark:border-border shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center justify-center space-y-3 ${link.color}`}
+            className="group flex items-center gap-4 rounded-2xl border border-neutral-200 p-5 transition-colors hover:bg-neutral-50 dark:border-neutral-800 dark:hover:bg-neutral-900"
             aria-label={`Link to ${link.platform}`}
           >
-            {link.icon}
-            <div className="relative overflow-hidden w-full  text-center h-6">
-              <span className="text-sm md:text-base font-medium text-foreground dark:text-background absolute inset-0 w-full transition-transform duration-300 group-hover:-translate-y-full">
-                {link.platform}
-              </span>
-              <span className="text-sm md:text-base font-medium text-foreground dark:text-background absolute w-full inset-0 transition-transform duration-300 translate-y-full group-hover:translate-y-0">
-                {link.platform}
-              </span>
-            </div>
+            <span className="text-neutral-500 transition-colors group-hover:text-neutral-900 dark:group-hover:text-neutral-100">
+              {link.icon}
+            </span>
+            <span className="font-medium">{link.platform}</span>
           </Link>
         ))}
       </div>

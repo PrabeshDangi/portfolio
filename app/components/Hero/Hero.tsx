@@ -2,41 +2,86 @@ import { Link } from "react-router";
 
 const Hero = () => {
   return (
-    <section className="">
-      <div className="flex-1 space-y-6 max-w-3xl">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground dark:text-background">
-          Hi, I'm <span className="text-primary">Prabesh Dangi</span> 
-        </h1>
-        <h2 className="text-2xl md:text-3xl text-foreground dark:text-background font-medium">
-          Backend Developer
-        </h2>
-        <div className="space-y-4 text-lg text-foreground dark:text-background leading-relaxed">
-          <p className="">
-          Architect of logic. Builder of APIs. 
-           I’m a backend developer who crafts the foundations of seamless digital experiences — because what happens behind the curtain matters.
+    <>
+      <section className="space-y-8">
+        <span className="text-3xl" aria-hidden="true">
+          👋
+        </span>
+
+        <div className="space-y-5">
+          <h1 className="text-4xl font-bold leading-tight tracking-tight text-neutral-900 md:text-5xl dark:text-neutral-100">
+            Hello, I&apos;m Prabesh.
+          </h1>
+          <h2 className="text-lg font-medium text-neutral-600 md:text-xl dark:text-neutral-400">
+            Backend Developer | APIs, Systems &amp; Scalable Architecture
+          </h2>
+          <p className="max-w-xl text-base leading-relaxed text-neutral-600 md:text-lg dark:text-neutral-400">
+            I build the foundations behind seamless digital experiences — APIs,
+            services, and backend systems that stay reliable as products grow.
           </p>
-          <p>
-            I'm currently working as a backend developer at{" "}
+          <p className="text-base leading-relaxed text-neutral-600 dark:text-neutral-400">
+            Currently building at{" "}
             <Link
               to="https://aitc.ai/"
               target="_blank"
-              className="text-primary group relative inline-flex items-center"
+              rel="noopener noreferrer"
+              className="group relative inline-flex items-center text-neutral-900 underline decoration-neutral-300 underline-offset-4 transition-colors hover:decoration-neutral-900 dark:text-neutral-100 dark:decoration-neutral-600 dark:hover:decoration-neutral-100"
             >
               AITC
-              <div className="absolute left-full ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                <div className="w-12 h-12 rounded-full overflow-hidden flex items-center justify-center bg-white">
+              <span className="pointer-events-none absolute left-full ml-2 opacity-0 transition-opacity group-hover:opacity-100">
+                <span className="flex size-10 items-center justify-center overflow-hidden rounded-full border border-neutral-200 bg-white dark:border-neutral-700 dark:bg-neutral-950">
                   <img
                     src="/aitc.logo.png"
                     alt="AITC"
-                    className="w-10 h-10 object-contain"
+                    className="size-8 object-contain"
                   />
-                </div>
-              </div>
+                </span>
+              </span>
             </Link>
+            .
           </p>
         </div>
-      </div>
-    </section>
+
+        <div className="flex flex-wrap items-center gap-3">
+          <Link to="/contact" className="btn-primary">
+            Get in touch
+          </Link>
+          <Link to="/projects" className="btn-secondary">
+            View work →
+          </Link>
+        </div>
+      </section>
+
+      <section className="mt-24 space-y-8">
+        <div className="space-y-2">
+          <p className="section-label">Writings</p>
+          <h2 className="text-2xl font-bold tracking-tight text-neutral-900 md:text-3xl dark:text-neutral-100">
+            Recent posts
+          </h2>
+          <p className="max-w-lg text-sm leading-relaxed text-neutral-600 md:text-base dark:text-neutral-400">
+            Thoughts on backend engineering, architecture, and building
+            software that lasts.
+          </p>
+        </div>
+
+        <article className="rounded-2xl border border-neutral-200 p-6 dark:border-neutral-800">
+          <p className="text-sm text-neutral-500 dark:text-neutral-400">
+            Coming soon
+          </p>
+          <h3 className="mt-2 font-medium text-neutral-900 dark:text-neutral-100">
+            Blog posts on the way
+          </h3>
+          <p className="mt-2 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+            I&apos;m working on my first articles. Check back soon or follow me
+            on social.
+          </p>
+        </article>
+
+        <Link to="/blog" className="btn-secondary inline-flex">
+          View all writings →
+        </Link>
+      </section>
+    </>
   );
 };
 

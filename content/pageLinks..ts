@@ -1,14 +1,6 @@
 export const pageLinks = [
-  {
-    name: "Links",
-    path: "/links",
-  },
-  {
-    name: "Get in Touch",
-    path: "/contact",
-  },
-  // {
-  //   name: "View Projects    ",
-  //   path: "/projects",
-  // },
+  { name: "Home", path: "/" },
+  { name: "Blog", path: "/blog" },
+  { name: "Work", path: "/projects" },
+  { name: "Contact", path: "/contact" },
 ];

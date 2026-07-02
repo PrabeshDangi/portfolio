@@ -23,7 +23,9 @@ export default function Blog() {
       </div>
 
       <article className="rounded-2xl border border-neutral-200 p-6 dark:border-neutral-800">
-        <p className="text-sm text-neutral-500 dark:text-neutral-400">Coming soon</p>
+        <p className="text-sm text-neutral-500 dark:text-neutral-400">
+          Coming soon
+        </p>
         <h2 className="mt-2 text-lg font-medium">Posts are on the way</h2>
         <p className="mt-2 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
           I&apos;m drafting my first articles. Check back soon.

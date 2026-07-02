@@ -3,6 +3,12 @@ import { reactRouter } from "@react-router/dev/vite";
 import { cloudflareDevProxy } from "@react-router/dev/vite/cloudflare";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
+import viteMcp from "vite-mcp";
+import {
+  consoleAdapter,
+  cookieAdapter,
+  localStorageAdapter,
+} from "vite-mcp/adapters";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig(({ isSsrBuild }) => ({
@@ -14,6 +20,9 @@ export default defineConfig(({ isSsrBuild }) => ({
       : undefined,
   },
   plugins: [
+    viteMcp({
+      adapters: [consoleAdapter, cookieAdapter, localStorageAdapter],
+    }),
     cloudflareDevProxy({
       getLoadContext({ context }) {
         return {

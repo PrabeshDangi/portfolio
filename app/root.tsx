@@ -73,7 +73,7 @@ export function ErrorBoundary({ error }: Readonly<Route.ErrorBoundaryProps>) {
     message = error.status === 404 ? "404" : "Error";
     details =
       error.status === 404
-        ? "The requested page could not be found."
+        ? "Even the LLM couldn't hallucinate this page."
         : error.statusText || details;
   } else if (import.meta.env.DEV && error && error instanceof Error) {
     details = error.message;

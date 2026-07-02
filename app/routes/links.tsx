@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import type { Route } from "./+types/links";
 import { generateMetadata } from "~/utils/metadata";
 
-export function meta({}: Route.MetaArgs) {
+export function meta(_args: Route.MetaArgs) {
   return [
     generateMetadata({
       title: "Links",
@@ -14,6 +14,14 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
+function isExternalUrl(url: string) {
+  return (
+    url.startsWith("http://") ||
+    url.startsWith("https://") ||
+    url.startsWith("mailto:")
+  );
+}
+
 export default function Links() {
   return (
     <section className="space-y-10">
@@ -21,27 +29,46 @@ export default function Links() {
         <p className="section-label">Connect</p>
         <h1 className="page-heading">Let&apos;s connect</h1>
         <p className="max-w-lg text-neutral-600 dark:text-neutral-400">
-          Find me across platforms — always open to conversations about
-          backend engineering and interesting projects.
+          Find me across platforms — always open to conversations about backend
+          engineering and interesting projects.
         </p>
       </div>
 
       <div className="grid gap-3 sm:grid-cols-2">
-        {links.map((link) => (
-          <Link
-            key={link.platform}
-            to={link.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex items-center gap-4 rounded-2xl border border-neutral-200 p-5 transition-colors hover:bg-neutral-50 dark:border-neutral-800 dark:hover:bg-neutral-900"
-            aria-label={`Link to ${link.platform}`}
-          >
-            <span className="text-neutral-500 transition-colors group-hover:text-neutral-900 dark:group-hover:text-neutral-100">
-              {link.icon}
-            </span>
-            <span className="font-medium">{link.platform}</span>
-          </Link>
-        ))}
+        {links.map((link) => {
+          const className =
+            "group flex items-center gap-4 rounded-2xl border border-neutral-200 p-5 transition-colors hover:bg-neutral-50 dark:border-neutral-800 dark:hover:bg-neutral-900";
+          const content = (
+            <>
+              <span className="text-neutral-500 transition-colors group-hover:text-neutral-900 dark:group-hover:text-neutral-100">
+                {link.icon}
+              </span>
+              <span className="font-medium">{link.platform}</span>
+            </>
+          );
+
+          return isExternalUrl(link.url) ? (
+            <a
+              key={link.platform}
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={className}
+              aria-label={`Link to ${link.platform}`}
+            >
+              {content}
+            </a>
+          ) : (
+            <Link
+              key={link.platform}
+              to={link.url}
+              className={className}
+              aria-label={`Link to ${link.platform}`}
+            >
+              {content}
+            </Link>
+          );
+        })}
       </div>
     </section>
   );

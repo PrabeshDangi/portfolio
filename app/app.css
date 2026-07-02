@@ -18,6 +18,10 @@
     @apply dark:bg-neutral-950 dark:text-neutral-100;
   }
 
+  main {
+    contain: layout style;
+  }
+
   ::selection {
     background-color: rgb(23 23 23 / 0.1);
   }

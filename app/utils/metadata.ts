@@ -32,7 +32,7 @@ export function generateMetadata({ title, description, path }: MetadataProps) {
         "@type": "Person",
         name: "Prabesh Dangi",
         url: url,
-        image: `${BASE_URL}/PrabeshLogo.png`,
+        image: `${BASE_URL}/logo-light.jpg`,
         description: description,
       },
     },

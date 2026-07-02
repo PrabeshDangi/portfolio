@@ -5,7 +5,7 @@ export const projects: Project[] = [
     slug: "aitc-homes",
     title: "AITC Homes",
     description:
-      "Backend system built with NestJS, Redis caching, Docker, BullMQ, AWS, Nginx, and monitoring via Grafana.",
+      "Backend system for a community management mobile application enabling visitor management, resident data handling, maintenance requests, and real-time alerts for gated residential societies.",
     details: [
       "Developed backend modules using NestJS with a layered caching strategy (Redis) to reduce peak-time latency.",
       "Orchestrated microservices using Docker and deployed with AWS CI/CD pipelines (Jenkins, Azure Pipelines).",
@@ -31,7 +31,7 @@ export const projects: Project[] = [
     slug: "annapurna-galleries",
     title: "Annapurna Galleries",
     description:
-      "Auction platform with real-time bidding using WebSocket and Event-Driven architecture.",
+      "Developed the backend for a scalable online art marketplace featuring authentication, artwork management, payments, and order workflows.",
     details: [
       "Developed backend features using ExpressJS with structured data access via Prisma.",
       "Implemented real-time auction bidding using WebSocket channels.",

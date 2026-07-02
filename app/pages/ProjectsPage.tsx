@@ -18,7 +18,7 @@ export function ProjectsPage({ projects }: { projects: Project[] }) {
         <p className="section-label">Portfolio</p>
         <h1 className="page-heading">Work</h1>
         <p className="max-w-lg text-neutral-600 dark:text-neutral-400">
-          Selected projects — backend systems, APIs, and tools I&apos;ve built.
+          Selected projects from my work in systems, APIs, and tools I&apos;ve built.
         </p>
       </div>
 

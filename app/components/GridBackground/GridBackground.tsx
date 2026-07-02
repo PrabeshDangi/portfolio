@@ -34,7 +34,7 @@ function GridHalf({ side }: { side: "left" | "right" }) {
 }
 
 const GridBackground = () => (
-  <div className="pointer-events-none absolute -z-10 w-full">
+  <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
     <GridHalf side="left" />
     <GridHalf side="right" />
   </div>

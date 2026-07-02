@@ -5,7 +5,7 @@ const Hero = () => {
     <>
       <section className="space-y-8">
         <span className="text-3xl" aria-hidden="true">
-          👋
+          
         </span>
 
         <div className="space-y-5">
@@ -13,11 +13,11 @@ const Hero = () => {
             Hello, I&apos;m Prabesh.
           </h1>
           <h2 className="text-lg font-medium text-neutral-600 md:text-xl dark:text-neutral-400">
-            Backend Developer | APIs, Systems &amp; Scalable Architecture
+            Software Engineer | APIs, Systems &amp; Scalable Architecture
           </h2>
           <p className="max-w-xl text-base leading-relaxed text-neutral-600 md:text-lg dark:text-neutral-400">
-            I build the foundations behind seamless digital experiences — APIs,
-            services, and backend systems that stay reliable as products grow.
+            I build the foundations behind seamless digital experiences - from APIs,
+            to services, and backend systems that stay reliable as products grow.
           </p>
           <p className="text-base leading-relaxed text-neutral-600 dark:text-neutral-400">
             Currently building at{" "}

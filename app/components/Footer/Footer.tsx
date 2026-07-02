@@ -15,6 +15,12 @@ const Footer = () => {
           <p className="text-sm text-neutral-600 dark:text-neutral-400">
             © {year} Prabesh Dangi. All rights reserved.
           </p>
+          <a
+            href="/llm.txt"
+            className="inline-block text-sm text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100"
+          >
+            LLM
+          </a>
         </div>
 
         <div className="flex items-center gap-4">

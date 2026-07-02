@@ -10,16 +10,12 @@
 
 @layer base {
   html {
-    scroll-behavior: smooth;
+    scrollbar-gutter: stable;
   }
 
   body {
     @apply bg-white font-sans text-neutral-800 antialiased;
     @apply dark:bg-neutral-950 dark:text-neutral-100;
-  }
-
-  main {
-    contain: layout style;
   }
 
   ::selection {
@@ -28,15 +24,6 @@
 
   [data-theme="dark"] ::selection {
     background-color: rgb(245 245 245 / 0.2);
-  }
-
-  /* ponytail: invert removes baked-in black bg on light theme; dark keeps original colors */
-  .logo-theme {
-    filter: invert(1) grayscale(1) contrast(1.2);
-  }
-
-  [data-theme="dark"] .logo-theme {
-    filter: none;
   }
 }
 
@@ -61,7 +48,7 @@
   }
 
   .nav-link {
-    @apply text-sm text-neutral-500 transition-colors hover:text-neutral-900 dark:hover:text-neutral-100;
+    @apply text-sm text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100;
   }
 
   .nav-link-active {

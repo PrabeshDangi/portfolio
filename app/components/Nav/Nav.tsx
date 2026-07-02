@@ -7,7 +7,7 @@ const Nav = () => {
   return (
     <header className="relative z-30 border-b border-neutral-200 dark:border-neutral-800">
       <nav className="mx-auto flex max-w-2xl items-center justify-between px-6 py-5">
-        <NavLink to="/" className="flex shrink-0 items-center">
+        <NavLink to="/" className="flex shrink-0 items-center" viewTransition={false}>
           <Logo variant="nav" />
         </NavLink>
 
@@ -17,8 +17,9 @@ const Nav = () => {
               <NavLink
                 key={link.path}
                 to={link.path}
-                prefetch="viewport"
+                prefetch="intent"
                 end={link.path === "/"}
+                viewTransition={false}
                 className={({ isActive }) =>
                   isActive ? "nav-link nav-link-active" : "nav-link"
                 }
